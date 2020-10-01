@@ -20,14 +20,16 @@ const chainMaker = {
   },
   removeLink(position) {
     position -= 1;
-    if (position > this.numberValue || position <= 0) {
+    if (position < 0) {
       this.arr = [];
       this.value = "";
       throw new Error();
     }
-    this.arr = this.arr.filter((item, index) => index !== position);
-    this.value = this.arr.join("");
-    return this;
+    else{
+      this.arr = this.arr.filter((item, index) => index !== position);
+      this.value = this.arr.join("");
+      return this;
+    }
   },
   finishChain() {
     let temp = this.arr.join("").slice(0, -2);
