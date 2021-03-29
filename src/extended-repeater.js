@@ -39,4 +39,4 @@ module.exports = function repeater(str, options) {
   res = res.split(`${options.separator}`).map(i => i + helpRes).join(`${options.separator}`)
 
   return res
-};
+}; 
